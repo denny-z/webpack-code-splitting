@@ -5,7 +5,6 @@ module.exports = {
   mode: 'development',
   entry: {
     index: './src/index.js',
-    another: './src/another-index.js'
   },
   output: {
     filename: '[name].bundle.js',
@@ -16,10 +15,5 @@ module.exports = {
       title: 'My title'
     })
   ],
-  optimization: {
-    splitChunks: {
-      chunks: 'all'
-    }
-  }
 };
 
