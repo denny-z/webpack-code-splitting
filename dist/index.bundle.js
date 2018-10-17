@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"print":"print"}[chunkId]||chunkId) + ".bundle.js"
+/******/ 		return __webpack_require__.p + "" + ({"print":"print","vendors~lodash":"vendors~lodash"}[chunkId]||chunkId) + ".bundle.js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -206,7 +206,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("function component() {\n    var button = document.createElement('button');\n\n    button.innerHTML = 'Click me to load things!'\n\n    button.onclick = e => __webpack_require__.e(/*! import() | print */ \"print\").then(__webpack_require__.bind(null, /*! ./print */ \"./src/print.js\")).then(loadedModule => {\n        var print = loadedModule.default;\n        \n        print()\n    })\n\n    return button;\n}\n\ndocument.body.appendChild(component())\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("function component() {\n    var button = document.createElement('button');\n\n    button.innerHTML = 'Click me to load things!'\n\n    button.onclick = e => __webpack_require__.e(/*! import() | print */ \"print\").then(__webpack_require__.bind(null, /*! ./print */ \"./src/print.js\")).then(loadedModule => {\n        var print = loadedModule.default;\n        \n        print()\n    })\n\n    return button;\n}\n\nfunction heavyComponent() {\n    var button = document.createElement('button');\n\n    button.innerHTML = 'Click me and I will load a library';\n\n    button.onclick = e => __webpack_require__.e(/*! import() | lodash */ \"vendors~lodash\").then(__webpack_require__.t.bind(null, /*! lodash */ \"./node_modules/lodash/lodash.js\", 7)).then(loadedModule => {\n        var _ = loadedModule.default;\n\n        console.log(_.join([\"Isn't\", 'it', 'awesome?'], ' '))\n    })\n    \n    return button;\n}\n\ndocument.body.appendChild(component());\ndocument.body.appendChild(document.createElement('br'));\ndocument.body.appendChild(heavyComponent());\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
