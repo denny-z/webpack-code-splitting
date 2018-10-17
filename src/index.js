@@ -1,11 +1,15 @@
-async function doHelloWorld() {
-    const {default: _} = await import(/* webpackChunkName: "lodash" */ 'lodash');
-    
-    console.log(_.join(['hello', 'webpack'], ' '));
+function component() {
+    var button = document.createElement('button');
 
-    return 'you are hello-worlded ;)';
+    button.innerHTML = 'Click me to load things!'
+
+    button.onclick = e => import(/* webpackChunkName: "print" */ './print').then(loadedModule => {
+        var print = loadedModule.default;
+        
+        print()
+    })
+
+    return button;
 }
 
-doHelloWorld().then( message => {
-    console.log(message);
-})
+document.body.appendChild(component())

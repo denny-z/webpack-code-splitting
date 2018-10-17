@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"vendors~lodash":"vendors~lodash"}[chunkId]||chunkId) + ".bundle.js"
+/******/ 		return __webpack_require__.p + "" + ({"print":"print"}[chunkId]||chunkId) + ".bundle.js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -206,7 +206,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("async function doHelloWorld() {\n    const {default: _} = await __webpack_require__.e(/*! import() | lodash */ \"vendors~lodash\").then(__webpack_require__.t.bind(null, /*! lodash */ \"./node_modules/lodash/lodash.js\", 7));\n    \n    console.log(_.join(['hello', 'webpack'], ' '));\n\n    return 'you are hello-worlded ;)';\n}\n\ndoHelloWorld().then( message => {\n    console.log(message);\n})\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("function component() {\n    var button = document.createElement('button');\n\n    button.innerHTML = 'Click me to load things!'\n\n    button.onclick = e => __webpack_require__.e(/*! import() | print */ \"print\").then(__webpack_require__.bind(null, /*! ./print */ \"./src/print.js\")).then(loadedModule => {\n        var print = loadedModule.default;\n        \n        print()\n    })\n\n    return button;\n}\n\ndocument.body.appendChild(component())\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
